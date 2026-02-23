@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://xhsb0lhify8x"
+path="res://.godot/imported/Aice room - Midnight Trip.mp3-c493b9cfe9f702a82eb4b956308d9758.mp3str"
+
+[deps]
+
+source_file="res://source/sound/Aice room - Midnight Trip.mp3"
+dest_files=["res://.godot/imported/Aice room - Midnight Trip.mp3-c493b9cfe9f702a82eb4b956308d9758.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

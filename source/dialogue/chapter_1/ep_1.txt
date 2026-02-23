@@ -1,0 +1,112 @@
+# ================================================================================
+# Godot Visual Novel Framework - Demo 剧本 (完整版)
+# 版本：1.0 | 作者：Wisher7274
+# ================================================================================
+
+# --- 资源定义 ---
+$ {"type":"char", "id":"plana", "name":"普拉娜", "title":"什亭之箱", "img_path":"res://source/character/plana/"}
+$ {"type":"scene", "id":"arona_room", "name":"阿罗娜房间", "img_path":"res://source/bgs/BG_AronaRoom_Night.png"}
+$ {"type":"scene", "id":"office", "name":"办公室", "img_path":"res://source/bgs/BG_MainOffice.jpg"}
+$ {"type":"scene", "id":"black", "name":"黑屏", "img_path":"res://source/bgs/black.jpg"}
+
+# ================================================================================
+# Demo 开始
+# ================================================================================
+
+{"cmd":{"which":"fullscreen_notice", "args":"Chapter 1-1\n让普拉娜来展示tinyGDstory！"}}
+{"sound":{"act":"play", "path":"res://source/sound/Aice room - Midnight Trip.mp3"}, "cmd":{"which":"fast"}}
+{"scene":{"id":"arona_room", "act":"show"}, "cmd":{"which":"fast"}}
+{"char":{"id":"plana", "act":"join"}, "cmd":{"which":"fast"}}
+
+{"char":{"id":"plana", "content":"老师……听得到吗？"}}
+{"char":{"id":"plana", "content":"……", "act":"confuse"}}
+{"char":{"id":"plana", "content":"确认连接中。"}}
+{"char":{"id":"plana", "content":"……", "act":"smile"}}
+{"char":{"id":"plana", "content":"老师的连接程序已确认完毕。"}}
+{"char":{"id":"plana", "content":"接下来将展示这个剧情系统~"}}
+
+# --- 功能演示：清空对话框 ---
+{"cmd":{"which":"clear_textbox"}}
+{"char":{"id":"plana", "content":"【功能演示】上方使用了 clear_textbox 指令"}}
+{"char":{"id":"plana", "content":"用于在场景转换或话题切换时清空残留文本"}}
+
+# --- 功能演示：特殊文本 ---
+{"char":{"id":"plana", "content":"【文本测试】"}}
+{"char":{"id":"plana", "content":"支持换行：\n第一行\n第二行\n第三行"}}
+{"char":{"id":"plana", "content":"支持符号：★☆◆◇●○→←↑↓"}}
+{"char":{"id":"plana", "content":"支持 Emoji：☕📚💻🎮🎵"}}
+{"char":{"id":"plana", "content":"长文本测试：这是一段较长的文本，用于演示打字机效果的持续显示。当文本较长时，玩家可以点击鼠标或按下空格键跳过等待过程，直接显示完整内容。这个功能在快速回顾剧情时非常有用。"}}
+
+# --- 功能演示：隐藏/显示对话框 ---
+{"char":{"id":"plana", "content":"接下来演示隐藏对话框功能……"}}
+{"cmd":{"which":"hide_textbox"}}
+{"cmd":{"which":"show_textbox"}}
+{"char":{"id":"plana", "content":"对话框已恢复显示。"}}
+
+# --- 功能演示：fast 模式（自动播放） ---}
+{"char":{"id":"plana", "content":"以下是 fast 模式演示（连续 3 帧不等待点击）："}}
+{"char":{"id":"plana", "content":"第一句……"},"cmd":{"which":"fast"}}
+{"char":{"id":"plana", "content":"第二句……"},"cmd":{"which":"fast"}}
+{"char":{"id":"plana", "content":"第三句！fast 模式结束。"},"cmd":{"which":"fast"}}
+{"char":{"id":"plana", "content":"以上三句话应该是一口气显示完的。"}}
+
+# --- 功能演示：场景切换 ---
+{"char":{"id":"plana", "content":"接下来演示场景切换功能。"}}
+{"char":{"id":"plana", "content":"请注意背景会从【阿罗娜房间】切换到【黑屏】再切换到【办公室】"}}
+{"scene":{"id":"black", "act":"show"}, "cmd":{"which":"fast"}}
+{"scene":{"id":"office", "act":"show"}, "cmd":{"which":"fast"}}
+{"char":{"id":"plana", "content":"场景切换完成。"}}
+{"char":{"id":"plana", "content":"背景切换与角色动画是并行处理的，不会互相阻塞。"}}
+
+# --- 功能演示：表情系统 ---
+{"char":{"id":"plana", "content":"表情系统演示："}}
+{"char":{"id":"plana", "content":"默认表情 (dummy)", "act":"dummy"}}
+{"char":{"id":"plana", "content":"开心表情 (happy)", "act":"happy"}}
+{"char":{"id":"plana", "content":"生气表情 (angry)", "act":"angry"}}
+{"char":{"id":"plana", "content":"微笑表情 (smile)", "act":"smile"}}
+{"char":{"id":"plana", "content":"困惑表情 (confuse)", "act":"confuse"}}
+{"char":{"id":"plana", "content":"表情可以在说话时同时切换，实现更生动的演出效果。"}}
+
+# --- 功能演示：角色登场/退场 ---
+{"char":{"id":"plana", "content":"接下来演示角色退场……"}}
+{"char":{"id":"plana", "content":"再见，老师。", "act":"smile"}, "cmd":{"which":"fast"}}
+{"char":{"id":"plana", "act":"leave"}}
+{"cmd":{"which":"clear_textbox"}}
+{"char":{"id":"plana", "content":"（角色已退场，但资源未销毁）"}}
+{"char":{"id":"plana", "act":"join"}}
+{"char":{"id":"plana", "content":"（角色再次登场，资源可复用）"}}
+{"char":{"id":"plana", "content":"资源复用可以避免重复加载，提升性能。"}}
+
+# --- 功能演示：并行演出 ---
+{"char":{"id":"plana", "content":"并行演出演示："}}
+{"char":{"id":"plana", "content":"下一帧将同时执行：场景切换 + 角色登场 + 对话显示"}}
+{"scene":{"id":"arona_room", "act":"show"}, "char":{"id":"plana", "act":"join"}, "cmd":{"which":"fast"}}
+{"char":{"id":"plana", "content":"看到了吗？背景、角色、文字是同时出现的！"}}
+{"char":{"id":"plana", "content":"这就是并行演出的优势，让剧情更流畅自然。"}}
+
+# --- 功能演示：全屏提示 ---
+{"cmd":{"which":"fullscreen_notice", "args":"全屏提示演示\n常用于章节标题或重要信息"}}
+{"char":{"id":"plana", "content":"全屏提示会暂停剧情，需要玩家点击继续。"}}
+{"char":{"id":"plana", "content":"适合用于强调重要信息或制造戏剧效果。"}}
+
+# --- 结束 ---
+{"char":{"id":"plana", "content":"===============================\nDemo 功能演示完毕！\n==============================="}}
+{"char":{"id":"plana", "content":"感谢体验 tinyGDstory！"}}
+{"char":{"id":"plana", "content":"希望这个框架能帮助您快速开发自己的游戏。"}}
+{"char":{"id":"plana", "content":"如有问题，请查看 README 或提交 Issue。"}}
+{"char":{"id":"plana", "content":"祝您创作愉快！✨", "act":"happy"}}
+{"char":{"id":"plana", "act":"leave"},"sound":{"act":"mute"},"cmd":{"which":"fast"}}
+{"cmd":{"which":"fullscreen_notice", "args":"Demo End\n感谢体验！"}}
+
+# ================================================================================
+# 快速参考
+# ================================================================================
+# {"char":{"id":"ID", "content":"文本"}}          - 对话
+# {"char":{"id":"ID", "act":"join/leave/表情"}}   - 角色动作
+# {"scene":{"id":"ID", "act":"show"}}             - 场景切换
+# {"cmd":{"which":"fullscreen_notice", "args":"文本"}} - 全屏提示
+# {"cmd":{"which":"clear_textbox"}}               - 清空文本
+# {"cmd":{"which":"hide_textbox/show_textbox"}}   - 隐藏/显示对话框
+# {"cmd":{"which":"fast"}}                        - 不等待点击
+# {"sound":{"act":"play/mute", "path":"路径"}}    - 音效播放 (DEMO)
+# ================================================================================
