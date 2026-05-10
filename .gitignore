@@ -3,3 +3,6 @@
 /android/
 project.godot
 .editorconfig
+TEVs.csproj
+TEVs.sln
+.vs

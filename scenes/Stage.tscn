@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://djlr5vhokv3vs"]
 
 [ext_resource type="Script" uid="uid://dtak2tvckdj8b" path="res://script/scenes/stage.gd" id="1_b1dnq"]
+[ext_resource type="FontFile" uid="uid://dr5p1efmuhdv0" path="res://source/font/HarmonyOS_Sans_Bold.ttf" id="2_g44ew"]
 [ext_resource type="FontFile" uid="uid://csq2flsew7p7a" path="res://source/font/SourceHanSansLite.ttf" id="2_ieuev"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ieuev"]
@@ -8,6 +9,10 @@ font_size = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_a7mf4"]
 font_color = Color(0.24093398, 0.7121525, 0.9999998, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ywoxc"]
+font = ExtResource("2_g44ew")
+font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_g44ew"]
 font = ExtResource("2_ieuev")
@@ -97,6 +102,7 @@ offset_bottom = 63.75
 grow_horizontal = 2
 grow_vertical = 2
 text = "Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample Sample "
+label_settings = SubResource("LabelSettings_ywoxc")
 autowrap_mode = 3
 
 [node name="fullscreen_cover" type="ColorRect" parent="." unique_id=420169759]
