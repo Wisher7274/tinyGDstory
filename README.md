@@ -4,12 +4,14 @@
 ![Godot Version](https://img.shields.io/badge/Godot-4.6.1+-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
+🌐 **语言:** [English](README.en.md) | 中文
+
 一个基于 Godot 4 开发的轻量级、可移植剧情系统框架。
 适用于需要剧情驱动，但并非完全是剧情类的游戏进行播放剧情。
 支持并行动画、打字机效果、资源管理及自定义指令扩展。
+![Preview](docs/preview_img.png)
 </div>
 
----
 
 ## 写在前面
 1. 本项目偏向于学习项目，欢迎同样对游戏开发有兴趣的朋友参与
@@ -30,7 +32,7 @@
 1. 克隆本仓库，可以在Godot编辑器中体验Demo。
 2. 将 `scene`、`script` 复制到你的godot项目目录。
 3. 在 `stage.gd` 中修改初始剧本路径。
-4. 按照 `Guilder.md` 编写您的剧情文件。
+4. 按照 `Guilder.md` 编写您的剧情文件 -> [这里](docs/Guilder.md)
 
 ## 📂 项目结构
 
