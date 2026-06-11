@@ -349,4 +349,3 @@ func _on_click_pressed() -> void:
 	if is_input_locked: return
 	skip_typing = true
 	ctc.emit()
-	
